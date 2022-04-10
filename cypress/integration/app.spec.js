@@ -28,4 +28,9 @@ describe('React TodoMVC', () => {
 
     cy.get('.todo-count').contains('3 items left')
   })
+
+  it('does NOT display the footer or todo-list when there are no todos', () => {
+    cy.get('.footer').should('not.exist')
+    cy.get('.todo-list').should('not.exist')
+  })
 })
